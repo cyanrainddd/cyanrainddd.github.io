@@ -19,22 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+    <meta name="description" content="1. 先下载安装Git和Node.js。 安装git时特别慢，所以又安装了一个steam++加速器（现名Watt Toolkit）不过好像也没有什么用; 安装Node.js时，由于系统自带的解压软件太强大，把Node.js当成安装包了，把这个解压软件卸掉就可以正常安装了。   2. 接下来就是使用npm安装Hexo。 在命令行执行以下命令：  1$ npm install -g hexo-cli">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My new blog">
+<meta property="og:url" content="http://example.com/2025/10/09/My-new-blog/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 先下载安装Git和Node.js。 安装git时特别慢，所以又安装了一个steam++加速器（现名Watt Toolkit）不过好像也没有什么用; 安装Node.js时，由于系统自带的解压软件太强大，把Node.js当成安装包了，把这个解压软件卸掉就可以正常安装了。   2. 接下来就是使用npm安装Hexo。 在命令行执行以下命令：  1$ npm install -g hexo-cli">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-10-09T14:25:17.000Z">
+<meta property="article:modified_time" content="2025-10-09T16:43:31.155Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2025/10/09/My-new-blog/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2025/10/09/My-new-blog/","path":"2025/10/09/My-new-blog/","title":"My new blog"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hexo</title>
+<title>My new blog | Hexo</title>
   
 
 
@@ -81,7 +86,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Hexo</h1>
+      <p class="site-title">Hexo</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -103,7 +108,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -116,6 +121,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%88%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85Git%E5%92%8CNode-js%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">1. 先下载安装Git和Node.js。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%8E%A5%E4%B8%8B%E6%9D%A5%E5%B0%B1%E6%98%AF%E4%BD%BF%E7%94%A8npm%E5%AE%89%E8%A3%85Hexo%E3%80%82"><span class="nav-number">2.</span> <span class="nav-text">2. 接下来就是使用npm安装Hexo。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85vscode"><span class="nav-number">3.</span> <span class="nav-text">3.安装vscode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">4.设置主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%86%99%E5%8D%9A%E5%AE%A2"><span class="nav-number">5.</span> <span class="nav-text">5.写博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E4%B8%8A"><span class="nav-number">6.</span> <span class="nav-text">6.部署博客到Github上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%8A%E9%85%8D%E7%BD%AE%E7%89%B9%E6%95%88"><span class="nav-number">7.</span> <span class="nav-text">7.上传博客及配置特效</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -153,16 +159,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/09/My-new-blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -176,13 +183,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Hexo">
+      <meta itemprop="name" content="My new blog | Hexo">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/10/09/My-new-blog/" class="post-title-link" itemprop="url">My new blog</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          My new blog
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -220,8 +227,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="1-先下载安装Git和Node-js。"><a href="#1-先下载安装Git和Node-js。" class="headerlink" title="1. 先下载安装Git和Node.js。"></a>1. <strong>先下载安装Git和Node.js。</strong></h3><ul>
+    <div class="post-body" itemprop="articleBody"><h3 id="1-先下载安装Git和Node-js。"><a href="#1-先下载安装Git和Node-js。" class="headerlink" title="1. 先下载安装Git和Node.js。"></a>1. <strong>先下载安装Git和Node.js。</strong></h3><ul>
 <li>安装git时特别慢，所以又安装了一个<u>steam++加速器</u>（现名Watt Toolkit）不过好像也没有什么用;</li>
 <li>安装Node.js时，由于系统自带的解压软件太强大，把Node.js当成安装包了，把这个解压软件卸掉就可以正常安装了。</li>
 </ul>
@@ -297,7 +303,6 @@
 
 
 
-      
     </div>
 
     
@@ -305,92 +310,25 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/blog/" rel="tag"># blog</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/10/09/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-angle-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/09/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/10/09/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-10-09 13:33:06" itemprop="dateCreated datePublished" datetime="2025-10-09T13:33:06+08:00">2025-10-09</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
