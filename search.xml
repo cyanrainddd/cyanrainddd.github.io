@@ -71,11 +71,11 @@
     
     
     <entry>
-      <title>友链</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<p>-好友[ysong]:<a href="https://ysongwww.github.io/">https://ysongwww.github.io/</a></p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -86,7 +86,18 @@
       <link href="/music/index.html"/>
       <url>/music/index.html</url>
       
-        <content type="html"><![CDATA[    <div id="aplayer-cDPZbeci" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="3zuhq7r6z4cz0e3" data-server="kugou" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="400px" data-preload="none" data-theme="#ad7a86"    ></div>]]></content>
+        <content type="html"><![CDATA[<script>console.error("ReferenceError: value is not defined");</script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>友链</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[<p>-好友[ysong]:<a href="https://ysongwww.github.io/">https://ysongwww.github.io/</a></p>]]></content>
       
     </entry>
     
@@ -107,17 +118,6 @@
       <title>电影</title>
       <link href="/movies/index.html"/>
       <url>/movies/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
