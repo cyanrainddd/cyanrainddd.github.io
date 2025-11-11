@@ -101,11 +101,11 @@
     
     
     <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[<script>console.error("ReferenceError: value is not defined");</script>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -123,11 +123,11 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<script>console.error("ReferenceError: value is not defined");</script>]]></content>
       
     </entry>
     
