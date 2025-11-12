@@ -8,7 +8,7 @@
       <link href="/2025/11/11/%E5%85%B3%E4%BA%8E-CTF/"/>
       <url>/2025/11/11/%E5%85%B3%E4%BA%8E-CTF/</url>
       
-        <content type="html"><![CDATA[<ul><li>由于我十月才刚刚买到电脑，再加上完全没涉及过CTF这方面的，先去看了很多基础知识，所以我只做出了两题（ﾉ´д｀）</li></ul>]]></content>
+        <content type="html"><![CDATA[<ul><li>由于我十月才刚刚买到电脑，再加上完全没涉及过CTF这方面的，先去看了很多基础知识，所以我只做出了两题（ﾉ´д｀）</li></ul><h1 id="一、-Week1-Ping"><a href="#一、-Week1-Ping" class="headerlink" title="一、[Week1] Ping??"></a>一、[Week1] Ping??</h1><ul><li>打开题目，发现有一个命令框，尝试命令注入</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1|cat flag.txt</span><br></pre></td></tr></table></figure><ul><li>发现命令被过滤，先寻找flag，输入<code>127.0.0.1|ls</code>,成功注入，发现当前目录下存在flag<br><img src="/images/4.2.png" alt="命令注入"></li><li>于是尝试读取，采用多种绕过方法<blockquote><p>分隔符|被过滤，可用；<br>空格 被过滤，可用${IFS} {IFS}<br>cat被过滤，可用more nl</p></blockquote></li><li>但试完后发现全都不行，遂放弃</li><li>最后尝试将<code>flag.txt</code>直接加入到url中，发现flag就出现了<br><img src="/images/4.3.png" alt="flag"></li></ul><hr><h1 id="二、-Week3-《关于我穿越到CTF的异世界这档事-Q》"><a href="#二、-Week3-《关于我穿越到CTF的异世界这档事-Q》" class="headerlink" title="二、[Week3] 《关于我穿越到CTF的异世界这档事:Q》"></a>二、[Week3] 《关于我穿越到CTF的异世界这档事:Q》</h1><p>题目中提示，单纯的玩游戏</p><ul><li>下载好之后，一路通关游戏，得到了多个flag碎片<br><img src="/images/4.4.jpg" alt="flag碎片"><br><img src="/images/4.5.jpg" alt="flag碎片"><br><img src="/images/4.6.jpg" alt="flag碎片"><br><img src="/images/4.7.jpg" alt="flag碎片"><br><img src="/images/4.8.jpg" alt="flag碎片"><br><img src="/images/4.9.jpg" alt="flag碎片"></li><li>将所有碎片结合在一起，得到一串字符，发现格式不太一样，然后用Base64解码之后即可得到flag</li></ul>]]></content>
       
       
       
