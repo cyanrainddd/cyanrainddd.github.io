@@ -59,7 +59,7 @@
       <link href="/2025/11/04/%E5%9F%BA%E7%A1%80%E4%BB%BB%E5%8A%A1%E5%AE%8C%E6%88%90%E6%83%85%E5%86%B5/"/>
       <url>/2025/11/04/%E5%9F%BA%E7%A1%80%E4%BB%BB%E5%8A%A1%E5%AE%8C%E6%88%90%E6%83%85%E5%86%B5/</url>
       
-        <content type="html"><![CDATA[<h2 id="任务一——计算机教育中缺失的学期"><a href="#任务一——计算机教育中缺失的学期" class="headerlink" title="任务一——计算机教育中缺失的学期"></a>任务一——计算机教育中缺失的学期</h2><ul><li>已看，了解了一些关于计算机的基础知识，感觉边看这个边去了解相关的知识更有助于掌握</li></ul><hr><h2 id="任务三——搭建基于-github-hexo-的个人博客"><a href="#任务三——搭建基于-github-hexo-的个人博客" class="headerlink" title="任务三——搭建基于 github+hexo 的个人博客"></a>任务三——搭建基于 github+hexo 的个人博客</h2><ul><li>已完成，详情见上一篇博客 <a href="https://cyanrainddd.github.io/2025/10/09/My-new-blog/">https://cyanrainddd.github.io/2025/10/09/My-new-blog/</a></li></ul><hr><h2 id="任务四——安装虚拟机"><a href="#任务四——安装虚拟机" class="headerlink" title="任务四——安装虚拟机"></a>任务四——安装虚拟机</h2><h3 id="1、下载虚拟机"><a href="#1、下载虚拟机" class="headerlink" title="1、下载虚拟机"></a>1、下载虚拟机</h3><ul><li>访问官网<a href="https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html">https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html</a></li><li>注册后，找到download for free，选择17 player for windows<br><img src="/images/3.1.png" alt="下载指引"><br><img src="/images/3.2.png" alt="下载指引"><br><img src="/images/3.3.png" alt="下载指引"><blockquote><p>注意不要下成最新版的25，也不要下更低版本的，要不然全是英文看不懂，而且会有很多东西不适配。</p></blockquote></li><li>找到下载后的文件（.exe），按照安装向导进行安装即可。</li></ul><h3 id="2、创建虚拟机"><a href="#2、创建虚拟机" class="headerlink" title="2、创建虚拟机"></a>2、创建虚拟机</h3><h4 id="（1）下载Ubuntu镜像"><a href="#（1）下载Ubuntu镜像" class="headerlink" title="（1）下载Ubuntu镜像"></a>（1）下载Ubuntu镜像</h4><ul><li><a href="https://ubuntu.com/download/desktop%EF%BC%8C%E5%BE%97%E5%88%B0%E5%AE%89%E8%A3%85%E5%85%89%E7%9B%98%EF%BC%88%E4%BB%A5.ios%E7%BB%93%E5%B0%BE%E7%9A%84%EF%BC%89">https://ubuntu.com/download/desktop，得到安装光盘（以.ios结尾的）</a><blockquote><p>不要点击打开！</p></blockquote></li></ul><h4 id="（2）创建虚拟机："><a href="#（2）创建虚拟机：" class="headerlink" title="（2）创建虚拟机："></a>（2）创建虚拟机：</h4><ul><li>磁盘容量设置为20G，分配4G的内存，两个处理器，连接网络<blockquote><p>本来可以直接简易安装，但不知道哪里出了差错，有些东西得自己手动安装（交互式安装）</p></blockquote></li><li>选择语言：中文（简体）、选择Chinese键盘布局，时区默认上海即可</li><li>安装类型：选择“清除整个磁盘并安装Ubuntu”</li><li>创建用户：输入用户名（cyan）及密码即可</li><li>安装完成：点击重启即可登录</li></ul><hr><h2 id="任务五——使用VSCode并且远程连接虚拟机，详情见下一篇博客"><a href="#任务五——使用VSCode并且远程连接虚拟机，详情见下一篇博客" class="headerlink" title="任务五——使用VSCode并且远程连接虚拟机，详情见下一篇博客"></a>任务五——使用VSCode并且远程连接虚拟机，详情见下一篇博客</h2><ul><li><a href="https://cyanrainddd.github.io/2025/11/04/Learn-to-use-VSCode/">https://cyanrainddd.github.io/2025/11/04/Learn-to-use-VSCode/</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="任务一——计算机教育中缺失的学期"><a href="#任务一——计算机教育中缺失的学期" class="headerlink" title="任务一——计算机教育中缺失的学期"></a>任务一——计算机教育中缺失的学期</h2><ul><li>已看，了解了一些关于计算机的基础知识，感觉边看这个边去了解相关的知识更有助于掌握</li></ul><hr><h2 id="任务三——搭建基于-github-hexo-的个人博客"><a href="#任务三——搭建基于-github-hexo-的个人博客" class="headerlink" title="任务三——搭建基于 github+hexo 的个人博客"></a>任务三——搭建基于 github+hexo 的个人博客</h2><ul><li>已完成，详情见上一篇博客 <a href="https://cyanrainddd.github.io/2025/10/09/%E6%96%B0%E6%89%8B%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/">https://cyanrainddd.github.io/2025/10/09/%E6%96%B0%E6%89%8B%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</a></li></ul><hr><h2 id="任务四——安装虚拟机"><a href="#任务四——安装虚拟机" class="headerlink" title="任务四——安装虚拟机"></a>任务四——安装虚拟机</h2><h3 id="1、下载虚拟机"><a href="#1、下载虚拟机" class="headerlink" title="1、下载虚拟机"></a>1、下载虚拟机</h3><ul><li>访问官网<a href="https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html">https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html</a></li><li>注册后，找到download for free，选择17 player for windows<br><img src="/images/3.1.png" alt="下载指引"><br><img src="/images/3.2.png" alt="下载指引"><br><img src="/images/3.3.png" alt="下载指引"><blockquote><p>注意不要下成最新版的25，也不要下更低版本的，要不然全是英文看不懂，而且会有很多东西不适配。</p></blockquote></li><li>找到下载后的文件（.exe），按照安装向导进行安装即可。</li></ul><h3 id="2、创建虚拟机"><a href="#2、创建虚拟机" class="headerlink" title="2、创建虚拟机"></a>2、创建虚拟机</h3><h4 id="（1）下载Ubuntu镜像"><a href="#（1）下载Ubuntu镜像" class="headerlink" title="（1）下载Ubuntu镜像"></a>（1）下载Ubuntu镜像</h4><ul><li><a href="https://ubuntu.com/download/desktop%EF%BC%8C%E5%BE%97%E5%88%B0%E5%AE%89%E8%A3%85%E5%85%89%E7%9B%98%EF%BC%88%E4%BB%A5.ios%E7%BB%93%E5%B0%BE%E7%9A%84%EF%BC%89">https://ubuntu.com/download/desktop，得到安装光盘（以.ios结尾的）</a><blockquote><p>不要点击打开！</p></blockquote></li></ul><h4 id="（2）创建虚拟机："><a href="#（2）创建虚拟机：" class="headerlink" title="（2）创建虚拟机："></a>（2）创建虚拟机：</h4><ul><li>磁盘容量设置为20G，分配4G的内存，两个处理器，连接网络<blockquote><p>本来可以直接简易安装，但不知道哪里出了差错，有些东西得自己手动安装（交互式安装）</p></blockquote></li><li>选择语言：中文（简体）、选择Chinese键盘布局，时区默认上海即可</li><li>安装类型：选择“清除整个磁盘并安装Ubuntu”</li><li>创建用户：输入用户名（cyan）及密码即可</li><li>安装完成：点击重启即可登录</li></ul><hr><h2 id="任务五——使用VSCode并且远程连接虚拟机，详情见下一篇博客"><a href="#任务五——使用VSCode并且远程连接虚拟机，详情见下一篇博客" class="headerlink" title="任务五——使用VSCode并且远程连接虚拟机，详情见下一篇博客"></a>任务五——使用VSCode并且远程连接虚拟机，详情见下一篇博客</h2><ul><li><a href="https://cyanrainddd.github.io/2025/11/04/VSCode%E4%B8%8E%E8%99%9A%E6%8B%9F%E6%9C%BA/">https://cyanrainddd.github.io/2025/11/04/VSCode%E4%B8%8E%E8%99%9A%E6%8B%9F%E6%9C%BA/</a></li></ul>]]></content>
       
       
       
@@ -103,9 +103,9 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>电影</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -114,9 +114,9 @@
     
     
     <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -136,22 +136,22 @@
     
     
     <entry>
-      <title>友链</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
-        <content type="html"><![CDATA[<ul><li>好友[ysong]:<a href="https://ysongwww.github.io/">https://ysongwww.github.io/</a></li><li>好友[wenwen]:<a href="https://liuwen35.github.io/">https://liuwen35.github.io/</a></li><li>好友[ruoxi]:<a href="https://calla-1020.github.io/">https://calla-1020.github.io/</a></li><li>好友[nn]:<a href="https://ll-4453.github.io/">https://LL-4453.github.io/</a></li><li>好友[yuting]:<a href="https://spring-912.github.io/Passion-life/">https://spring-912.github.io/Passion-life/</a></li></ul>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>电影</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title>友链</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<ul><li>好友[ysong]:<a href="https://ysongwww.github.io/">https://ysongwww.github.io/</a></li><li>好友[wenwen]:<a href="https://liuwen35.github.io/">https://liuwen35.github.io/</a></li><li>好友[ruoxi]:<a href="https://calla-1020.github.io/">https://calla-1020.github.io/</a></li><li>好友[nn]:<a href="https://ll-4453.github.io/">https://LL-4453.github.io/</a></li><li>好友[yuting]:<a href="https://spring-912.github.io/Passion-life/">https://spring-912.github.io/Passion-life/</a></li></ul>]]></content>
       
     </entry>
     
