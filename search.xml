@@ -27,7 +27,7 @@
       <link href="/2025/11/11/%E5%85%B3%E4%BA%8E-CTF/"/>
       <url>/2025/11/11/%E5%85%B3%E4%BA%8E-CTF/</url>
       
-        <content type="html"><![CDATA[<ul><li>由于我十月才刚刚买到电脑，再加上完全没涉及过CTF这方面的，先去看了很多基础知识，所以我只做出了两题（ﾉ´д｀）</li></ul><h1 id="一、-Week1-Ping"><a href="#一、-Week1-Ping" class="headerlink" title="一、[Week1] Ping??"></a>一、[Week1] Ping??</h1><ul><li>打开题目，发现有一个命令框，尝试命令注入</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1|cat flag.txt</span><br></pre></td></tr></table></figure><ul><li>发现命令被过滤，先寻找flag，输入<code>127.0.0.1|ls</code>,成功注入，发现当前目录下存在flag<br><img src="/images/4.2.png" alt="命令注入"></li><li>于是尝试读取，采用多种绕过方法<blockquote><p>分隔符|被过滤，可用；<br>空格 被过滤，可用${IFS} {IFS}<br>cat被过滤，可用more nl</p></blockquote></li><li>但试完后发现全都不行，遂放弃</li><li>最后尝试将<code>flag.txt</code>直接加入到url中，发现flag就出现了<br><img src="/images/4.3.png" alt="flag"></li></ul><hr><h1 id="二、-Week3-《关于我穿越到CTF的异世界这档事-Q》"><a href="#二、-Week3-《关于我穿越到CTF的异世界这档事-Q》" class="headerlink" title="二、[Week3] 《关于我穿越到CTF的异世界这档事:Q》"></a>二、[Week3] 《关于我穿越到CTF的异世界这档事:Q》</h1><p>题目中提示，单纯的玩游戏</p><ul><li>下载好之后，一路通关游戏，得到了多个flag碎片<br><img src="/images/4.4.jpg" alt="flag碎片"><br><img src="/images/4.5.jpg" alt="flag碎片"><br><img src="/images/4.6.jpg" alt="flag碎片"><br><img src="/images/4.7.jpg" alt="flag碎片"><br><img src="/images/4.8.jpg" alt="flag碎片"><br><img src="/images/4.9.jpg" alt="flag碎片"></li><li>将所有碎片结合在一起，得到一串字符，发现格式不太一样，然后用Base64解码之后即可得到flag</li></ul><hr><h1 id="三、-Week1-Gitttttttt"><a href="#三、-Week1-Gitttttttt" class="headerlink" title="三、[Week1] Gitttttttt"></a>三、[Week1] Gitttttttt</h1><p>首先，题目中提示Gitttttttt，有可能会有.git泄漏造成的源码泄漏（部署时未删除.git目录)</p><blockquote><p>可以采用工具恢复:githack、dvcs-ripper</p></blockquote><ul><li>使用GitHack：先下载完githack(点击code，选择download ZIP），再按照下图步骤操作<br><img src="/images/c4.png" alt="git"></li></ul><h2 id="1、判断是否存在git泄露"><a href="#1、判断是否存在git泄露" class="headerlink" title="1、判断是否存在git泄露"></a>1、判断是否存在git泄露</h2><ul><li>在url中输入.git&#x2F;，弹出403窗口，说明存在但是拒绝访问<br><img src="/images/c1.png" alt="git"></li></ul><h2 id="2、使用githack工具"><a href="#2、使用githack工具" class="headerlink" title="2、使用githack工具"></a>2、使用githack工具</h2><ul><li>在文件夹目录打开cmd，按照GitHub中提示的usage，输入</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python GitHack.py http://www.openssl.org/.git/</span><br></pre></td></tr></table></figure><p>会弹出flag.txt,说明已经获得了flag文件<br><img src="/images/c3.png" alt="git"></p><h2 id="3、读取flag"><a href="#3、读取flag" class="headerlink" title="3、读取flag"></a>3、读取flag</h2><ul><li>返回githack所在文件夹，会出现一个命名为域名的文件夹，打开即可得到flag。<br><img src="/images/c2.png" alt="git"></li></ul><hr>]]></content>
+        <content type="html"><![CDATA[<ul><li>由于我十月才刚刚买到电脑，再加上完全没涉及过CTF这方面的，先去看了很多基础知识，所以我只做出了两题（ﾉ´д｀）</li></ul><h1 id="一、-Week1-Ping"><a href="#一、-Week1-Ping" class="headerlink" title="一、[Week1] Ping??"></a>一、[Week1] Ping??</h1><ul><li>打开题目，发现有一个命令框，尝试命令注入</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1|cat flag.txt</span><br></pre></td></tr></table></figure><ul><li>发现命令被过滤，先寻找flag，输入<code>127.0.0.1|ls</code>,成功注入，发现当前目录下存在flag<br><img src="/images/4.2.png" alt="命令注入"></li><li>于是尝试读取，采用多种绕过方法<blockquote><p>分隔符|被过滤，可用；<br>空格 被过滤，可用${IFS} {IFS}<br>cat被过滤，可用more nl</p></blockquote></li><li>但试完后发现全都不行，遂放弃</li><li>最后尝试将<code>flag.txt</code>直接加入到url中，发现flag就出现了<br><img src="/images/4.3.png" alt="flag"></li></ul><hr><h1 id="二、-Week3-《关于我穿越到CTF的异世界这档事-Q》"><a href="#二、-Week3-《关于我穿越到CTF的异世界这档事-Q》" class="headerlink" title="二、[Week3] 《关于我穿越到CTF的异世界这档事:Q》"></a>二、[Week3] 《关于我穿越到CTF的异世界这档事:Q》</h1><p>题目中提示，单纯的玩游戏</p><ul><li>下载好之后，一路通关游戏，得到了多个flag碎片<br><img src="/images/4.4.jpg" alt="flag碎片"><br><img src="/images/4.5.jpg" alt="flag碎片"><br><img src="/images/4.6.jpg" alt="flag碎片"><br><img src="/images/4.7.jpg" alt="flag碎片"><br><img src="/images/4.8.jpg" alt="flag碎片"><br><img src="/images/4.9.jpg" alt="flag碎片"></li><li>将所有碎片结合在一起，得到一串字符，发现格式不太一样，然后用Base64解码之后即可得到flag</li></ul><hr><h1 id="三、-Week1-Gitttttttt（11-28）"><a href="#三、-Week1-Gitttttttt（11-28）" class="headerlink" title="三、[Week1] Gitttttttt（11.28）"></a>三、[Week1] Gitttttttt（11.28）</h1><p>首先，题目中提示Gitttttttt，有可能会有.git泄漏造成的源码泄漏（部署时未删除.git目录)</p><blockquote><p>可以采用工具恢复:githack、dvcs-ripper</p></blockquote><ul><li>使用GitHack：先下载完githack(点击code，选择download ZIP），再按照下图步骤操作<br><img src="/images/c4.png" alt="git"></li></ul><h2 id="1、判断是否存在git泄露"><a href="#1、判断是否存在git泄露" class="headerlink" title="1、判断是否存在git泄露"></a>1、判断是否存在git泄露</h2><ul><li>在url中输入.git&#x2F;，弹出403窗口，说明存在但是拒绝访问。<br><img src="/images/c1.png" alt="git"></li></ul><h2 id="2、使用githack工具"><a href="#2、使用githack工具" class="headerlink" title="2、使用githack工具"></a>2、使用githack工具</h2><ul><li>在文件夹目录打开cmd，按照GitHub中提示的usage，输入</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python GitHack.py http://www.openssl.org/.git/</span><br></pre></td></tr></table></figure><p>会弹出flag.txt,说明已经获得了flag文件。<br><img src="/images/c3.png" alt="git"></p><h2 id="3、读取flag"><a href="#3、读取flag" class="headerlink" title="3、读取flag"></a>3、读取flag</h2><ul><li>返回githack所在文件夹，会出现一个命名为域名的文件夹，打开即可得到flag。</li></ul><hr><h1 id="四、-Week1-from-http（11-29）"><a href="#四、-Week1-from-http（11-29）" class="headerlink" title="四、[Week1] from_http（11.29）"></a>四、[Week1] from_http（11.29）</h1><blockquote><p>这题是关于http的一些基本知识与抓包的基本操作。</p></blockquote><h2 id="1、分析"><a href="#1、分析" class="headerlink" title="1、分析"></a>1、分析</h2><ul><li>首先，网页描述使用?CTFBrowser浏览器访问，就联想到修改User-Agent请求包</li></ul><h2 id="2、抓包"><a href="#2、抓包" class="headerlink" title="2、抓包"></a>2、抓包</h2><h3 id="（1）先尝试使用最简单的F12：打开网络，刷新，编辑，修改请求包，发送之后发现并没有结果"><a href="#（1）先尝试使用最简单的F12：打开网络，刷新，编辑，修改请求包，发送之后发现并没有结果" class="headerlink" title="（1）先尝试使用最简单的F12：打开网络，刷新，编辑，修改请求包，发送之后发现并没有结果"></a>（1）先尝试使用最简单的F12：打开网络，刷新，编辑，修改请求包，发送之后发现并没有结果</h3><p><img src="/images/c5.png" alt="http"></p><blockquote><p>看到提示说使用拓展或抓包工具，于是再次尝试。</p></blockquote><h3 id="（2）接着尝试使用抓包工具（Burp-Suite）"><a href="#（2）接着尝试使用抓包工具（Burp-Suite）" class="headerlink" title="（2）接着尝试使用抓包工具（Burp Suite）"></a>（2）接着尝试使用抓包工具（Burp Suite）</h3>]]></content>
       
       
       
@@ -109,20 +109,9 @@
     
     
     <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>电影</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -142,9 +131,20 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电影</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
