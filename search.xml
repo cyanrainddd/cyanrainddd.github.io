@@ -8,9 +8,15 @@
       <link href="/2025/11/15/web%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
       <url>/2025/11/15/web%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="任务⼀：HTTP是⼀切Web攻防的基础，学会抓包与读报文。"><a href="#任务⼀：HTTP是⼀切Web攻防的基础，学会抓包与读报文。" class="headerlink" title="任务⼀：HTTP是⼀切Web攻防的基础，学会抓包与读报文。"></a>任务⼀：HTTP是⼀切Web攻防的基础，学会抓包与读报文。</h2><h3 id="一、-HTTP的请求-响应模型"><a href="#一、-HTTP的请求-响应模型" class="headerlink" title="一、&#x3D;&#x3D;HTTP的请求-响应模型&#x3D;&#x3D;"></a>一、&#x3D;&#x3D;HTTP的请求-响应模型&#x3D;&#x3D;</h3><h4 id="1、建立连接：客户端与服务器之间建立连接。"><a href="#1、建立连接：客户端与服务器之间建立连接。" class="headerlink" title="1、建立连接：客户端与服务器之间建立连接。"></a>1、建立连接：客户端与服务器之间建立连接。</h4><blockquote><p>HTTP&#x2F;1.1：支持持久连接，允许多个请求&#x2F;响应通过同一个 TCP 连接传输，减少了建立和关闭连接的消耗。</p></blockquote><blockquote><p>HTTP&#x2F;2：基于二进制分帧，支持多路复用，允许同时通过单一的 HTTP&#x2F;2 连接发起多重的、独立的、双向的交流。</p></blockquote><blockquote><p>HTTP&#x2F;3：基于 QUIC 协议，旨在减少网络延迟，提高传输速度和安全性。</p></blockquote><hr><h4 id="2、发送请求：客户端向服务器发送请求：（URL"><a href="#2、发送请求：客户端向服务器发送请求：（URL" class="headerlink" title="2、发送请求：客户端向服务器发送请求：（URL)"></a>2、发送请求：客户端向服务器发送请求：（URL)</h4><p>&#x3D;&#x3D;请求方法：&#x3D;&#x3D;</p><ul><li>GET：请求从服务器获取指定资源。这是最常用的方法，用于访问页面。</li><li>POST：请求服务器接受并处理请求体中的数据，通常用于表单提交。</li><li>PUT：请求服务器存储一个资源，并用请求体中的内容替换目标资源的所有内容。</li><li>DELETE：请求服务器删除指定的资源。</li><li>HEAD：与 GET 类似，但不获取资源的内容，只获取响应头信息。<blockquote><p>&#x3D;&#x3D;请求&#x3D;请求行+请求头+空行+请求数据&#x3D;&#x3D;<br><img src="/images/5.1.png" alt="请求示例"></p></blockquote></li></ul><hr><h4 id="3、处理请求：服务器接收到请求后，根据请求中的信息找到相应的资源"><a href="#3、处理请求：服务器接收到请求后，根据请求中的信息找到相应的资源" class="headerlink" title="3、处理请求：服务器接收到请求后，根据请求中的信息找到相应的资源"></a>3、处理请求：服务器接收到请求后，根据请求中的信息找到相应的资源</h4><ul><li>从数据库中检索数据、生成动态内容或者简单地返回静态文件。</li></ul><h4 id="4、发送响应：服务器将处理后的结果封装在响应中，并将其发送回客户端。"><a href="#4、发送响应：服务器将处理后的结果封装在响应中，并将其发送回客户端。" class="headerlink" title="4、发送响应：服务器将处理后的结果封装在响应中，并将其发送回客户端。"></a>4、发送响应：服务器将处理后的结果封装在响应中，并将其发送回客户端。</h4><p><img src="/images/5.2.png" alt="响应示例"><br>&#x3D;&#x3D;响应码：&#x3D;&#x3D;</p><ul><li>200  OK  请求成功。一般用于GET与POST请求</li><li>301  Moved Permanently  永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替</li><li>302  Found  临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI</li><li>404  Not Found  服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面</li><li>500  Internal Server Error  服务器内部错误，无法完成请求</li></ul><h4 id="5、关闭连接"><a href="#5、关闭连接" class="headerlink" title="5、关闭连接"></a>5、关闭连接</h4><h2 id=""><a href="#" class="headerlink" title=""></a><img src="/images/5.3.png" alt="任务解读"></h2><h3 id="二、HTML基础"><a href="#二、HTML基础" class="headerlink" title="二、HTML基础"></a>二、HTML基础</h3><blockquote><p>我这个部分是在手机上学习的，就直接手写了笔记，等过几天我就把它编辑成文字或表格再上传一遍<br><img src="/images/5.4.jpg" alt="HTML1"><br><img src="/images/5.5.jpg" alt="HTML2"></p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h2 id="任务⼀：HTTP是⼀切Web攻防的基础，学会抓包与读报文。"><a href="#任务⼀：HTTP是⼀切Web攻防的基础，学会抓包与读报文。" class="headerlink" title="任务⼀：HTTP是⼀切Web攻防的基础，学会抓包与读报文。"></a>任务⼀：HTTP是⼀切Web攻防的基础，学会抓包与读报文。</h2><h3 id="一、-HTTP的请求-响应模型"><a href="#一、-HTTP的请求-响应模型" class="headerlink" title="一、&#x3D;&#x3D;HTTP的请求-响应模型&#x3D;&#x3D;"></a>一、&#x3D;&#x3D;HTTP的请求-响应模型&#x3D;&#x3D;</h3><h4 id="1、建立连接：客户端与服务器之间建立连接。"><a href="#1、建立连接：客户端与服务器之间建立连接。" class="headerlink" title="1、建立连接：客户端与服务器之间建立连接。"></a>1、建立连接：客户端与服务器之间建立连接。</h4><blockquote><p>HTTP&#x2F;1.1：支持持久连接，允许多个请求&#x2F;响应通过同一个 TCP 连接传输，减少了建立和关闭连接的消耗。</p></blockquote><blockquote><p>HTTP&#x2F;2：基于二进制分帧，支持多路复用，允许同时通过单一的 HTTP&#x2F;2 连接发起多重的、独立的、双向的交流。</p></blockquote><blockquote><p>HTTP&#x2F;3：基于 QUIC 协议，旨在减少网络延迟，提高传输速度和安全性。</p></blockquote><hr><h4 id="2、发送请求：客户端向服务器发送请求：（URL"><a href="#2、发送请求：客户端向服务器发送请求：（URL" class="headerlink" title="2、发送请求：客户端向服务器发送请求：（URL)"></a>2、发送请求：客户端向服务器发送请求：（URL)</h4><p>&#x3D;&#x3D;请求方法：&#x3D;&#x3D;</p><ul><li>GET：请求从服务器获取指定资源。这是最常用的方法，用于访问页面。</li><li>POST：请求服务器接受并处理请求体中的数据，通常用于表单提交。</li><li>PUT：请求服务器存储一个资源，并用请求体中的内容替换目标资源的所有内容。</li><li>DELETE：请求服务器删除指定的资源。</li><li>HEAD：与 GET 类似，但不获取资源的内容，只获取响应头信息。<blockquote><p>&#x3D;&#x3D;请求&#x3D;请求行+请求头+空行+请求数据&#x3D;&#x3D;<br><img src="/images/5.1.png" alt="请求示例"></p></blockquote></li></ul><hr><h4 id="3、处理请求：服务器接收到请求后，根据请求中的信息找到相应的资源"><a href="#3、处理请求：服务器接收到请求后，根据请求中的信息找到相应的资源" class="headerlink" title="3、处理请求：服务器接收到请求后，根据请求中的信息找到相应的资源"></a>3、处理请求：服务器接收到请求后，根据请求中的信息找到相应的资源</h4><ul><li>从数据库中检索数据、生成动态内容或者简单地返回静态文件。</li></ul><h4 id="4、发送响应：服务器将处理后的结果封装在响应中，并将其发送回客户端。"><a href="#4、发送响应：服务器将处理后的结果封装在响应中，并将其发送回客户端。" class="headerlink" title="4、发送响应：服务器将处理后的结果封装在响应中，并将其发送回客户端。"></a>4、发送响应：服务器将处理后的结果封装在响应中，并将其发送回客户端。</h4><p><img src="/images/5.2.png" alt="响应示例"><br>&#x3D;&#x3D;响应码：&#x3D;&#x3D;</p><ul><li>200  OK  请求成功。一般用于GET与POST请求</li><li>301  Moved Permanently  永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替</li><li>302  Found  临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI</li><li>404  Not Found  服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面</li><li>500  Internal Server Error  服务器内部错误，无法完成请求</li></ul><h4 id="5、关闭连接"><a href="#5、关闭连接" class="headerlink" title="5、关闭连接"></a>5、关闭连接</h4><h2 id=""><a href="#" class="headerlink" title=""></a><img src="/images/5.3.png" alt="任务解读"></h2><h3 id="二、HTML基础"><a href="#二、HTML基础" class="headerlink" title="二、HTML基础"></a>二、HTML基础</h3><ul><li>对于中文网页需要在头部将字符声明为 UTF-8 或 GBK,否则会出现乱码。<blockquote><p>使用 <code>&lt;meta charset=&quot;utf-8&quot;&gt; </code>或<code>&lt;meta charset=&quot;gbk&quot;&gt;</code>声明编码。</p></blockquote></li><li>HTML 标签通常是成对出现的，比如 <b> 和 </b>(第一个标签是开始标签，第二个标签是结束标签)<blockquote><p>我这个部分是在手机上学习的，就直接手写了笔记，等过几天我就把它编辑成文字或表格再上传一遍<br><img src="/images/5.4.jpg" alt="HTML1"><br><img src="/images/5.5.jpg" alt="HTML2"></p></blockquote></li></ul><hr><h3 id="三、实操（已提前安装好VSCode）"><a href="#三、实操（已提前安装好VSCode）" class="headerlink" title="三、实操（已提前安装好VSCode）"></a>三、实操（已提前安装好VSCode）</h3><h4 id="1、新建"><a href="#1、新建" class="headerlink" title="1、新建"></a>1、新建</h4><ul><li>打开VSCode 选择” 文件(F)-&gt;新建文件(N) “，填好文件名并放到合适的文件夹里。如图所示：<br><img src="/images/5.7.jpg" alt="HTML3"></li></ul>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Web </tag>
+            
+        </tags>
       
     </entry>
     
@@ -21,7 +27,7 @@
       <link href="/2025/11/11/%E5%85%B3%E4%BA%8E-CTF/"/>
       <url>/2025/11/11/%E5%85%B3%E4%BA%8E-CTF/</url>
       
-        <content type="html"><![CDATA[<ul><li>由于我十月才刚刚买到电脑，再加上完全没涉及过CTF这方面的，先去看了很多基础知识，所以我只做出了两题（ﾉ´д｀）</li></ul><h1 id="一、-Week1-Ping"><a href="#一、-Week1-Ping" class="headerlink" title="一、[Week1] Ping??"></a>一、[Week1] Ping??</h1><ul><li>打开题目，发现有一个命令框，尝试命令注入</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1|cat flag.txt</span><br></pre></td></tr></table></figure><ul><li>发现命令被过滤，先寻找flag，输入<code>127.0.0.1|ls</code>,成功注入，发现当前目录下存在flag<br><img src="/images/4.2.png" alt="命令注入"></li><li>于是尝试读取，采用多种绕过方法<blockquote><p>分隔符|被过滤，可用；<br>空格 被过滤，可用${IFS} {IFS}<br>cat被过滤，可用more nl</p></blockquote></li><li>但试完后发现全都不行，遂放弃</li><li>最后尝试将<code>flag.txt</code>直接加入到url中，发现flag就出现了<br><img src="/images/4.3.png" alt="flag"></li></ul><hr><h1 id="二、-Week3-《关于我穿越到CTF的异世界这档事-Q》"><a href="#二、-Week3-《关于我穿越到CTF的异世界这档事-Q》" class="headerlink" title="二、[Week3] 《关于我穿越到CTF的异世界这档事:Q》"></a>二、[Week3] 《关于我穿越到CTF的异世界这档事:Q》</h1><p>题目中提示，单纯的玩游戏</p><ul><li>下载好之后，一路通关游戏，得到了多个flag碎片<br><img src="/images/4.4.jpg" alt="flag碎片"><br><img src="/images/4.5.jpg" alt="flag碎片"><br><img src="/images/4.6.jpg" alt="flag碎片"><br><img src="/images/4.7.jpg" alt="flag碎片"><br><img src="/images/4.8.jpg" alt="flag碎片"><br><img src="/images/4.9.jpg" alt="flag碎片"></li><li>将所有碎片结合在一起，得到一串字符，发现格式不太一样，然后用Base64解码之后即可得到flag</li></ul>]]></content>
+        <content type="html"><![CDATA[<ul><li>由于我十月才刚刚买到电脑，再加上完全没涉及过CTF这方面的，先去看了很多基础知识，所以我只做出了两题（ﾉ´д｀）</li></ul><h1 id="一、-Week1-Ping"><a href="#一、-Week1-Ping" class="headerlink" title="一、[Week1] Ping??"></a>一、[Week1] Ping??</h1><ul><li>打开题目，发现有一个命令框，尝试命令注入</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1|cat flag.txt</span><br></pre></td></tr></table></figure><ul><li>发现命令被过滤，先寻找flag，输入<code>127.0.0.1|ls</code>,成功注入，发现当前目录下存在flag<br><img src="/images/4.2.png" alt="命令注入"></li><li>于是尝试读取，采用多种绕过方法<blockquote><p>分隔符|被过滤，可用；<br>空格 被过滤，可用${IFS} {IFS}<br>cat被过滤，可用more nl</p></blockquote></li><li>但试完后发现全都不行，遂放弃</li><li>最后尝试将<code>flag.txt</code>直接加入到url中，发现flag就出现了<br><img src="/images/4.3.png" alt="flag"></li></ul><hr><h1 id="二、-Week3-《关于我穿越到CTF的异世界这档事-Q》"><a href="#二、-Week3-《关于我穿越到CTF的异世界这档事-Q》" class="headerlink" title="二、[Week3] 《关于我穿越到CTF的异世界这档事:Q》"></a>二、[Week3] 《关于我穿越到CTF的异世界这档事:Q》</h1><p>题目中提示，单纯的玩游戏</p><ul><li>下载好之后，一路通关游戏，得到了多个flag碎片<br><img src="/images/4.4.jpg" alt="flag碎片"><br><img src="/images/4.5.jpg" alt="flag碎片"><br><img src="/images/4.6.jpg" alt="flag碎片"><br><img src="/images/4.7.jpg" alt="flag碎片"><br><img src="/images/4.8.jpg" alt="flag碎片"><br><img src="/images/4.9.jpg" alt="flag碎片"></li><li>将所有碎片结合在一起，得到一串字符，发现格式不太一样，然后用Base64解码之后即可得到flag</li></ul><hr><h1 id="三、-Week1-Gitttttttt"><a href="#三、-Week1-Gitttttttt" class="headerlink" title="三、[Week1] Gitttttttt"></a>三、[Week1] Gitttttttt</h1><p>首先，题目中提示Gitttttttt，有可能会有.git泄漏造成的源码泄漏（部署时未删除.git目录)</p><blockquote><p>可以采用工具恢复:githack、dvcs-ripper</p></blockquote><ul><li>使用GitHack：先下载完githack(点击code，选择download ZIP），再按照下图步骤操作<br><img src="/images/c4.png" alt="git"></li></ul><h2 id="1、判断是否存在git泄露"><a href="#1、判断是否存在git泄露" class="headerlink" title="1、判断是否存在git泄露"></a>1、判断是否存在git泄露</h2><ul><li>在url中输入.git&#x2F;，弹出403窗口，说明存在但是拒绝访问<br><img src="/images/c1.png" alt="git"></li></ul><h2 id="2、使用githack工具"><a href="#2、使用githack工具" class="headerlink" title="2、使用githack工具"></a>2、使用githack工具</h2><ul><li>在文件夹目录打开cmd，按照GitHub中提示的usage，输入</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python GitHack.py http://www.openssl.org/.git/</span><br></pre></td></tr></table></figure><p>会弹出flag.txt,说明已经获得了flag文件<br><img src="/images/c3.png" alt="git"></p><h2 id="3、读取flag"><a href="#3、读取flag" class="headerlink" title="3、读取flag"></a>3、读取flag</h2><ul><li>返回githack所在文件夹，会出现一个命名为域名的文件夹，打开即可得到flag。<br><img src="/images/c2.png" alt="git"></li></ul><hr>]]></content>
       
       
       
@@ -103,9 +109,9 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -114,11 +120,11 @@
     
     
     <entry>
-      <title>友链</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>电影</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
-        <content type="html"><![CDATA[<ul><li>好友[ysong]:<a href="https://ysongwww.github.io/">https://ysongwww.github.io/</a></li><li>好友[wenwen]:<a href="https://liuwen35.github.io/">https://liuwen35.github.io/</a></li><li>好友[ruoxi]:<a href="https://calla-1020.github.io/">https://calla-1020.github.io/</a></li><li>好友[nn]:<a href="https://ll-4453.github.io/">https://LL-4453.github.io/</a></li><li>好友[yuting]:<a href="https://spring-912.github.io/Passion-life/">https://spring-912.github.io/Passion-life/</a></li></ul>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -136,9 +142,9 @@
     
     
     <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -147,11 +153,11 @@
     
     
     <entry>
-      <title>电影</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title>友链</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<ul><li>好友[ysong]:<a href="https://ysongwww.github.io/">https://ysongwww.github.io/</a></li><li>好友[wenwen]:<a href="https://liuwen35.github.io/">https://liuwen35.github.io/</a></li><li>好友[ruoxi]:<a href="https://calla-1020.github.io/">https://calla-1020.github.io/</a></li><li>好友[nn]:<a href="https://ll-4453.github.io/">https://LL-4453.github.io/</a></li><li>好友[yuting]:<a href="https://spring-912.github.io/Passion-life/">https://spring-912.github.io/Passion-life/</a></li></ul>]]></content>
       
     </entry>
     
