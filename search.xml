@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>ISCTF</title>
+      <link href="/2026/01/27/ISCTF/"/>
+      <url>/2026/01/27/ISCTF/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、2025复现"><a href="#一、2025复现" class="headerlink" title="一、2025复现"></a>一、2025复现</h1><h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="1、Guess！"><a href="#1、Guess！" class="headerlink" title="1、Guess！"></a>1、Guess！</h3><p>打开后使用二分法即可得出flag<br><img src="/images/6.1.png" alt="guess"></p><h3 id="2、美丽的风景照"><a href="#2、美丽的风景照" class="headerlink" title="2、美丽的风景照"></a>2、美丽的风景照</h3><p>解压缩之后得到一张动图，拆成七张图片，可以得到七段字符<br>因为有七种颜色，可以按照彩虹的颜色排<br>使用base64解码之后，可得出flag<br><img src="/images/6.2.1.png" alt="动图"><br>jqW2–&gt;2Wqj<br><img src="/images/6.2.5.png" alt="动图"><br>Dg2C–&gt;C2gD<br><img src="/images/6.2.3.png" alt="动图"><br>7HLo8<br><img src="/images/6.2.4.png" alt="动图"><br>6yRWh<br><img src="/images/6.2.2.png" alt="动图"><br>ZXw8T<br><img src="/images/6.2.7.png" alt="动图"><br>3CaEK–&gt;KEaC3(二维码显示“那是假的flag”，所以感觉没那么简单)<br><img src="/images/6.2.6.png" alt="动图"><br>98Mz<br>按照彩虹顺序拼接：jqW2Dg2C7HLo86yRWhZXw8T3CaEK98Mz，编码之后发现不对<br>因为有些图片是古代的，古时候从右往左读，所以把古代照片的字符倒着读，就得到：2WqjC2gD7HLo86yRWhZXw8TKEaC398Mz<br>然后再进行base58解码即可得到：ISCTF{H0w_834u71ful!!!}<br><img src="/images/6.2.8.png" alt="解码"></p><h1 id="二、2024复现"><a href="#二、2024复现" class="headerlink" title="二、2024复现"></a>二、2024复现</h1>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Web基础学习</title>
       <link href="/2025/11/15/web%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
       <url>/2025/11/15/web%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/</url>
@@ -33,7 +52,7 @@
       
         <tags>
             
-            <tag> ?CTF </tag>
+            <tag> CTF </tag>
             
         </tags>
       
