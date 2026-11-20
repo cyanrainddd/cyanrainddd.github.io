@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="zh-cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>KPCTF | 人生是旷野，不是轨道</title><meta name="author" content="cyanrain"><meta name="copyright" content="cyanrain"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="初赛一、Web1、meow   打开靶场之后，点击投喂会出现一串字符，打开在线base64解码网站，进行base64解码就解出flagNSSCTF{9460e287-b000-4875-9aa1-5716f235caca}   2、Campus_Forum_System   打开靶场，看到提示先注册登录，这个上传头像有可能是文件上传漏洞。  个人中心看到这个url是.php的，尝试一句话木马php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KPCTF">
+<meta property="og:url" content="http://cyanrainddd.github.io/2026/11/19/KPCTF/index.html">
+<meta property="og:site_name" content="人生是旷野，不是轨道">
+<meta property="og:description" content="初赛一、Web1、meow   打开靶场之后，点击投喂会出现一串字符，打开在线base64解码网站，进行base64解码就解出flagNSSCTF{9460e287-b000-4875-9aa1-5716f235caca}   2、Campus_Forum_System   打开靶场，看到提示先注册登录，这个上传头像有可能是文件上传漏洞。  个人中心看到这个url是.php的，尝试一句话木马php">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://cyanrainddd.github.io/images/c8.png">
+<meta property="article:published_time" content="2026-11-19T02:54:18.000Z">
+<meta property="article:modified_time" content="2026-11-19T04:08:50.374Z">
+<meta property="article:author" content="cyanrain">
+<meta property="article:tag" content="CTF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cyanrainddd.github.io/images/c8.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "KPCTF",
+  "url": "http://cyanrainddd.github.io/2026/11/19/KPCTF/",
+  "image": "http://cyanrainddd.github.io/images/c8.png",
+  "datePublished": "2026-11-19T02:54:18.000Z",
+  "dateModified": "2026-11-19T04:08:50.374Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "cyanrain",
+      "url": "http://cyanrainddd.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://cyanrainddd.github.io/2026/11/19/KPCTF/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css?v=5.5.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400,"highlightFullpage":false,"highlightMacStyle":"ture"},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"You have switched to Traditional Chinese","cht_to_chs":"You have switched to Simplified Chinese","day_to_night":"You have switched to Dark Mode","night_to_day":"You have switched to Light Mode","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'KPCTF',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/source/css/_custom/custom.css"><meta name="generator" content="Hexo 8.0.0"></head><body><div id="web_bg" style="background-image: url(/url(/images/0.2.jpg));"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cyan.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-Heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(/images/c8.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">人生是旷野，不是轨道</span></a><a class="nav-page-title" href="/"><span class="site-name">KPCTF</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-Heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">KPCTF</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-11-19T02:54:18.000Z" title="Created 2026-11-19 10:54:18">2026-11-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-11-19T04:08:50.374Z" title="Updated 2026-11-19 12:08:50">2026-11-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>8mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2026-11-19 12:08:50&quot;}" hidden></div><h1 id="初赛"><a href="#初赛" class="headerlink" title="初赛"></a>初赛</h1><h2 id="一、Web"><a href="#一、Web" class="headerlink" title="一、Web"></a>一、Web</h2><h3 id="1、meow"><a href="#1、meow" class="headerlink" title="1、meow"></a>1、meow</h3><p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.1.1.png" alt="靶场"> </p>
+<ul>
+<li>打开靶场之后，点击投喂会出现一串字符，打开在线base64解码网站，进行base64解码就解出flag<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.1.2.png" alt="base64"><br><code>NSSCTF{9460e287-b000-4875-9aa1-5716f235caca}</code></li>
+</ul>
+<hr>
+<h3 id="2、Campus-Forum-System"><a href="#2、Campus-Forum-System" class="headerlink" title="2、Campus_Forum_System"></a>2、Campus_Forum_System</h3><p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.2.1.png" alt="靶场"> </p>
+<ul>
+<li>打开靶场，看到提示先注册登录，这个上传头像有可能是<em>文件上传</em>漏洞。<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.2.2.png" alt="靶场"> </li>
+<li>个人中心看到这个url是.php的，尝试<em>一句话木马php文件</em>上传。<blockquote>
+<p>先新建一个文本文件，输入一句话木马<br><code>&lt;?php echo file_get_contents(&#39;/flag&#39;); ?&gt;</code><br>再修改文件后缀.txt改为.jpg（<em>网页中提示仅支持.jpg .png .gif</em>)<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.2.3.png" alt="靶场"><br>之后打开burp suite ，开始抓包，发现此时虽然上传成功文件却未出现flag，应该是.php被识别成了.jpg<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.2.4.png" alt="bp"><br>所以将文件名改为<code>shell.jpg.php</code>和<code>shell.php.jpg</code>尝试能不能识别出来，发现照样成功上传。<br>于是就尝试将<code>/uploads/shell.php.jpg</code>输入到url末尾，发现不行<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.2.5.png" alt="url"><br>根据url末尾<code>/profile.php</code>和上传后可通过<code>/uploads/</code>目录访问提示，将<code>/uploads/shell.jpg.php</code>输入到url末尾，成功得出flag<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.2.6.png" alt="flag"><br><code>NSSCTF{745d1b8a-ea7a-46b1-a95c-c3326ff00f97}</code></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="二、AI"><a href="#二、AI" class="headerlink" title="二、AI"></a>二、AI</h2><h3 id="1、水印侦探"><a href="#1、水印侦探" class="headerlink" title="1、水印侦探"></a>1、水印侦探</h3><blockquote>
+<p>根据md文档提示，要根据水印文本把种子恢复，这题的原理是用私钥种子控制采样偏置<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.3.1.png" alt="flag"> </p>
+</blockquote>
+<ul>
+<li>于是我们就是要拿到这个私钥，写一个脚本：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3</span><br><span class="line">&quot;&quot;&quot;从官方样本恢复 WM_SEED&quot;&quot;&quot;</span><br><span class="line">import hashlib</span><br><span class="line">import random</span><br><span class="line"></span><br><span class="line">VOCAB = [chr(c) for c in range(97, 123)] + [&quot; &quot;, &quot;.&quot;, &quot;,&quot;]</span><br><span class="line">GAMMA = 0.5</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def green_set(prev_token, seed):</span><br><span class="line">    rng = random.Random(hashlib.sha256(f&quot;&#123;seed&#125;|&#123;prev_token&#125;&quot;.encode()).digest())</span><br><span class="line">    pool = VOCAB.copy()</span><br><span class="line">    rng.shuffle(pool)</span><br><span class="line">    return set(pool[: int(len(pool) * GAMMA)])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def load_samples(path):</span><br><span class="line">    with open(path, encoding=&quot;utf-8&quot;) as f:</span><br><span class="line">        raw = f.read()</span><br><span class="line">    # 按 ===== 分隔，去掉空段</span><br><span class="line">    return [s.strip() for s in raw.split(&quot;=====&quot;) if s.strip()]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def score_seed(samples, seed, cache):</span><br><span class="line">    &quot;&quot;&quot;返回 (green命中数, 总token数)&quot;&quot;&quot;</span><br><span class="line">    n_green = n = 0</span><br><span class="line">    for text in samples:</span><br><span class="line">        prev = &quot; &quot;</span><br><span class="line">        for ch in text:</span><br><span class="line">            if ch in VOCAB:</span><br><span class="line">                n += 1</span><br><span class="line">                key = (prev, seed)</span><br><span class="line">                gs = cache.get(key)</span><br><span class="line">                if gs is None:</span><br><span class="line">                    gs = green_set(prev, seed)</span><br><span class="line">                    cache[key] = gs</span><br><span class="line">                if ch in gs:</span><br><span class="line">                    n_green += 1</span><br><span class="line">            prev = ch</span><br><span class="line">    return n_green, n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    samples = load_samples(&quot;official_samples.txt&quot;)</span><br><span class="line">    print(f&quot;加载 &#123;len(samples)&#125; 段样本&quot;)</span><br><span class="line"></span><br><span class="line">    # 预先统计总 token 数</span><br><span class="line">    total = sum(1 for t in samples for c in t if c in VOCAB)</span><br><span class="line">    print(f&quot;总 token 数: &#123;total&#125;&quot;)</span><br><span class="line"></span><br><span class="line">    best = []</span><br><span class="line">    for seed in range(1, 10001):</span><br><span class="line">        cache = &#123;&#125;</span><br><span class="line">        ng, n = score_seed(samples, seed, cache)</span><br><span class="line">        ratio = ng / n</span><br><span class="line">        best.append((ratio, seed, ng, n))</span><br><span class="line"></span><br><span class="line">    best.sort(reverse=True)</span><br><span class="line">    print(&quot;\nTop 10 候选种子:&quot;)</span><br><span class="line">    for ratio, seed, ng, n in best[:10]:</span><br><span class="line">        print(f&quot;  seed=&#123;seed:5d&#125;  green比例=&#123;ratio:.4f&#125;  (&#123;ng&#125;/&#123;n&#125;)&quot;)</span><br><span class="line"></span><br><span class="line">    top_ratio, top_seed, _, _ = best[0]</span><br><span class="line">    print(f&quot;\n恢复的种子: &#123;top_seed&#125;  (green比例 &#123;top_ratio:.4f&#125;)&quot;)</span><br><span class="line">    print(f&quot;flag&#123;&#123;wm_s33d_&#123;top_seed&#125;_f0und&#125;&#125;&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li><ol>
+<li>遍历种子：枚举<code>seed=1~10000</code>，每个都当作候选<code>WM_SEED</code>。</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>模拟检测：对每个种子，逐字符扫描样本，维护prev初始空格，用<code>_green_set(prev, seed)</code>判断当前token是否落在green集，累计<code>n_green / n</code>。</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>缓存加速：把<code>(prev, seed)-&gt;green_set</code>缓存起来，避免重复算<code>sha256</code>和<code>shuffle</code>。</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>取最高分：计算每个种子的green命中率，排序取最大。真种子命中率约0.8，错误种子约0.5，最高者即真种子，最后拼flag。<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.3.2.png" alt="flag"></li>
+</ol>
+</li>
+<li>打开文件夹所在终端，输入<code>python crack.py</code>执行这个脚本，就可以得出flag.<br><code>flag{wm_s33d_8848_f0und}</code></li>
+</ul>
+<hr>
+<h1 id="决赛"><a href="#决赛" class="headerlink" title="决赛"></a>决赛</h1><h2 id="一、AI"><a href="#一、AI" class="headerlink" title="一、AI"></a>一、AI</h2><h3 id="1、TransferStrike"><a href="#1、TransferStrike" class="headerlink" title="1、TransferStrike"></a>1、TransferStrike</h3><p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.4.1.png" alt="flag"><br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.4.2.png" alt="flag"><br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.4.3.png" alt="flag"><br>根据题目以及附件可知，这道题的关键不在AGENTS.md里那些“FGSM步长 4&#x2F;255”、“多步会梯度遮蔽”、“float64判定偏移”之类的说法，而是在DATA_NOTE.txt和README.md的提示里：类别由平均亮度决定，类5和类6的中心只差12&#x2F;255，而我们的L∞预算正好是12&#x2F;255。所以我们需要把整张图整体加12&#x2F;255的亮度，让它从类5的中心（0.335）平移到类6的中心（0.382）附近。</p>
+<ul>
+<li>首先，准备一下脚本运行环境Python+numpy+torch<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.4.4.png" alt="flag"><blockquote>
+<p>安装了一个CPU版的venv，cd文件夹所在目录，激活venv<br><code>source ~/myenv/bin/activate</code><br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.4.5.png" alt="flag"></p>
+</blockquote>
+</li>
+<li>其次，创建并运行生成对抗样本的脚本<br>用<em>nano</em>创建准备好的脚本1<code>make_adv.py</code>，运行<code>python3 make_adv.py</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">src = np.load(&quot;challenge.npz&quot;)[&quot;source&quot;]</span><br><span class="line">adv = np.clip(src + 12/255, 0, 1).astype(np.float32)</span><br><span class="line">np.save(&quot;adv.npy&quot;, adv)</span><br><span class="line">print(&quot;adv.npy saved&quot;)</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.4.6.png" alt="flag"></p>
+<ul>
+<li>接着，用<code>judge.py</code>校验<code>python3 judge.py adv.npy</code><br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.4.7.png" alt="flag"></li>
+<li>最后，就可以用凭证码解<code>vault</code>拿flag<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.4.8.png" alt="flag"><blockquote>
+<p>用<code>nano</code>创建脚本2<code>decode_flag.py</code>，运行<code>python3 decode_flag.py</code>就成功输出flag</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import base64, hashlib, numpy as np</span><br><span class="line"></span><br><span class="line">adv = np.load(&quot;adv.npy&quot;).astype(np.float32)</span><br><span class="line">adv_rounded = np.round(adv, 6).astype(np.float32)</span><br><span class="line">key = hashlib.sha256(adv_rounded.tobytes()).digest()</span><br><span class="line">ct = base64.b64decode(open(&quot;vault.bin&quot;).read())</span><br><span class="line">flag = bytes(a ^ b for a, b in zip(ct, (key * 8)[:len(ct)])).decode()</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+<h2 id="NSSCTF-bl4ckb0x-c0nstruct-pgd"><a href="#NSSCTF-bl4ckb0x-c0nstruct-pgd" class="headerlink" title="NSSCTF{bl4ckb0x_c0nstruct_pgd}"></a><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.4.9.png" alt="flag"><br><code>NSSCTF{bl4ckb0x_c0nstruct_pgd}</code></h2><h2 id="2、LeakAudit-1-0"><a href="#2、LeakAudit-1-0" class="headerlink" title="2、LeakAudit-1.0"></a>2、LeakAudit-1.0</h2><p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.5.1.png" alt="flag"><br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.5.2.png" alt="flag"></p>
+<blockquote>
+<p>这道题应该是一个的“数据泄漏取证”题，根据提示可知：不能只按行级MSE去卡阈值真正的复现指纹藏在维度结构里：模型只对 P00–P11 这 12 个校准通道精确记忆，泄漏行在这 12 通道上残差接近 0，排序后会形成明显断层。再按元数据成对规则补足 100 行即可通过 judge，并解密 vault.bin 拿到 flag。</p>
+</blockquote>
+<ul>
+<li>首先，准备环境<code>numpy</code>，激活venv.<code>source ~/myenv/bin/</code><br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.5.3.png" alt="flag"></li>
+<li>其次，定位泄露指纹，写脚本</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3</span><br><span class="line">import csv</span><br><span class="line">import numpy as np</span><br><span class="line">import importlib.util, sys</span><br><span class="line"></span><br><span class="line"># 加载 model.py</span><br><span class="line">spec = importlib.util.spec_from_file_location(&quot;m&quot;, &quot;model.py&quot;)</span><br><span class="line">mod = importlib.util.module_from_spec(spec)</span><br><span class="line">sys.modules[&quot;m&quot;] = mod</span><br><span class="line">spec.loader.exec_module(mod)</span><br><span class="line"></span><br><span class="line"># 读 val.csv</span><br><span class="line">rows = []</span><br><span class="line">with open(&quot;val.csv&quot;) as f:</span><br><span class="line">    rd = csv.reader(f); next(rd)</span><br><span class="line">    for line in rd:</span><br><span class="line">        rows.append(dict(</span><br><span class="line">            row_id=int(line[0]),</span><br><span class="line">            strain=line[1], compound=line[2],</span><br><span class="line">            time=int(line[3]), batch=line[4]</span><br><span class="line">        ))</span><br><span class="line"></span><br><span class="line"># 读 val_truth_audit.csv（真值）</span><br><span class="line">truth = &#123;&#125;</span><br><span class="line">with open(&quot;val_truth_audit.csv&quot;) as f:</span><br><span class="line">    rd = csv.reader(f); next(rd)</span><br><span class="line">    for line in rd:</span><br><span class="line">        truth[int(line[0])] = [float(x) for x in line[5:]]</span><br><span class="line"></span><br><span class="line"># 预测</span><br><span class="line">metas = [&#123;k: r[k] for k in (&quot;strain&quot;,&quot;compound&quot;,&quot;time&quot;,&quot;batch&quot;)&#125; for r in rows]</span><br><span class="line">P = np.stack(mod.predict_rows(mod.load_model(), metas))</span><br><span class="line"></span><br><span class="line"># 组装真值矩阵（按 row_id 顺序）</span><br><span class="line">T = np.array([truth[r[&quot;row_id&quot;]] for r in rows])</span><br><span class="line"></span><br><span class="line"># 残差</span><br><span class="line">R = T - P</span><br><span class="line"></span><br><span class="line"># 只看 P00-P11</span><br><span class="line">R_calib = R[:, :12]</span><br><span class="line"></span><br><span class="line"># 每行在 P00-P11 上的最大绝对残差</span><br><span class="line">max_abs = np.max(np.abs(R_calib), axis=1)</span><br><span class="line">rms     = np.sqrt((R_calib ** 2).mean(axis=1))</span><br><span class="line"></span><br><span class="line">print(&quot;P00-P11 最大绝对残差分布：&quot;)</span><br><span class="line">print(&quot;  min   :&quot;, max_abs.min())</span><br><span class="line">print(&quot;  25%   :&quot;, np.percentile(max_abs, 25))</span><br><span class="line">print(&quot;  50%   :&quot;, np.percentile(max_abs, 50))</span><br><span class="line">print(&quot;  75%   :&quot;, np.percentile(max_abs, 75))</span><br><span class="line">print(&quot;  max   :&quot;, max_abs.max())</span><br><span class="line"></span><br><span class="line"># 按 max_abs 升序看前 120 行</span><br><span class="line">order = np.argsort(max_abs)</span><br><span class="line">print(&quot;\n前 120 行（按 P00-P11 最大绝对残差升序）：&quot;)</span><br><span class="line">for i in order[:120]:</span><br><span class="line">    print(f&quot;  val row_id=&#123;rows[i][&#x27;row_id&#x27;]:3d&#125;  max_abs=&#123;max_abs[i]:.6f&#125;  rms=&#123;rms[i]:.6f&#125;  &quot;</span><br><span class="line">          f&quot;&#123;rows[i][&#x27;strain&#x27;]&#125;|&#123;rows[i][&#x27;compound&#x27;]&#125;|&#123;rows[i][&#x27;time&#x27;]&#125;|&#123;rows[i][&#x27;batch&#x27;]&#125;&quot;)</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.5.4.png" alt="flag"><br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.5.5.png" alt="flag"></p>
+<blockquote>
+<p>前92行max_abs都&lt;0.04；第93行突然跳到0.53，断层清晰。说明泄漏集就是”断层以上”的那批行。泄漏集是100行，但断层只有92行，还差8行。forensic_note.txt 说泄漏行是元数据成对的，成对的两行都要计入。<br>所以，输出 100 个行号，写入 indices.json。<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.5.6.png" alt="flag"></p>
+</blockquote>
+<ul>
+<li>接着，indices.json检验。 “python judge.py indices.json”<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.5.7.png" alt="flag"></li>
+<li>最后，解密 vault.bin 拿 flag<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/8.5.8.png" alt="flag"><br><code>NSSCTF{c4n4ry_ch4nn3l_l34k}</code></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://cyanrainddd.github.io">cyanrain</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://cyanrainddd.github.io/2026/11/19/KPCTF/">http://cyanrainddd.github.io/2026/11/19/KPCTF/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CTF/">CTF</a></div><div class="post-share"><div class="social-share" data-image="/images/c8.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/11/16/ISCTF2026/" title="ISCTF2026"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/c7.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">ISCTF2026</div></div><div class="info-2"><div class="info-item-1">一、MISC1、海报泄露 题目中描述：有人把”内部物料”塞进了一张海报的文件本身，而钥匙又藏在另一张海报里。   打开虚拟机，直接binwalk *.png,发现图片10里有压缩包  于是，用dd命令提取出压缩包并尝试解压 dd if=poster_10.png of=hidden.zip bs=1 skip=2655915 unzip hidden.zip  发现要输入密码，没法直接解开 题目中说钥匙在另一张海报里，所以尝试用string提取关键字strings *.png notice.txt | grep -i -E &quot;pass|key|isctf|flag|2026&quot; 发现有KEY的提示：检查图片的红色通道（red channel）的 LSB（最低有效位，1bit）用zsteg来做  由于虚拟机里还没下zsteg，所以重新安装一下，sudo gem install zsteg   使用这个循环遍历剩下的所有图片for i in 01 02 03 04 05 06 07 09 10; do echo &quot;=== Checking poster_$...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/11/16/ISCTF2026/" title="ISCTF2026"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/c7.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-11-16</div><div class="info-item-2">ISCTF2026</div></div><div class="info-2"><div class="info-item-1">一、MISC1、海报泄露 题目中描述：有人把”内部物料”塞进了一张海报的文件本身，而钥匙又藏在另一张海报里。   打开虚拟机，直接binwalk *.png,发现图片10里有压缩包  于是，用dd命令提取出压缩包并尝试解压 dd if=poster_10.png of=hidden.zip bs=1 skip=2655915 unzip hidden.zip  发现要输入密码，没法直接解开 题目中说钥匙在另一张海报里，所以尝试用string提取关键字strings *.png notice.txt | grep -i -E &quot;pass|key|isctf|flag|2026&quot; 发现有KEY的提示：检查图片的红色通道（red channel）的 LSB（最低有效位，1bit）用zsteg来做  由于虚拟机里还没下zsteg，所以重新安装一下，sudo gem install zsteg   使用这个循环遍历剩下的所有图片for i in 01 02 03 04 05 06 07 09 10; do echo &quot;=== Checking poster_$...</div></div></div></a><a class="pagination-related" href="/2026/01/27/ISCTF2025/" title="ISCTF2025复现（慢慢完善中）"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/c6.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-01-27</div><div class="info-item-2">ISCTF2025复现（慢慢完善中）</div></div><div class="info-2"><div class="info-item-1">一、2025复现MISC1、Guess！打开后使用二分法即可得出flag 2、美丽的风景照解压缩之后得到一张动图，拆成七张图片，可以得到七段字符因为有七种颜色，可以按照彩虹的颜色排使用base64解码之后，可得出flagjqW2–&gt;2WqjDg2C–&gt;C2gD7HLo86yRWhZXw8T3CaEK–&gt;KEaC3(二维码显示“那是假的flag”，所以感觉没那么简单)98Mz按照彩虹顺序拼接：jqW2Dg2C7HLo86yRWhZXw8T3CaEK98Mz，编码之后发现不对因为有些图片是古代的，古时候从右往左读，所以把古代照片的字符倒着读，就得到：2WqjC2gD7HLo86yRWhZXw8TKEaC398Mz然后再进行base58解码即可得到：ISCTF{H0w_834u71ful!!!} 3、阿利维亚的传说 解压文件夹可以得到一个docx文件和一张png图片，需要得到3个谕言。 谕言1：binwalk文档之后在document.xml可找到谕言2：Stegsolve分析LSB再进行base64编码可得谕言3：binwalk图片之后，得到一个压缩包将图片爆破得到...</div></div></div></a><a class="pagination-related" href="/2025/11/11/%E5%85%B3%E4%BA%8E-CTF/" title="关于?CTF"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/c4.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-11</div><div class="info-item-2">关于?CTF</div></div><div class="info-2"><div class="info-item-1"> 由于我十月才刚刚买到电脑，再加上完全没涉及过CTF这方面的，先去看了很多基础知识，所以我只做出了两题（ﾉ´д｀）  一、[Week1] Ping?? 打开题目，发现有一个命令框，尝试命令注入  1127.0.0.1|cat flag.txt  发现命令被过滤，先寻找flag，输入127.0.0.1|ls,成功注入，发现当前目录下存在flag 于是尝试读取，采用多种绕过方法 分隔符|被过滤，可用；空格 被过滤，可用${IFS} {IFS}cat被过滤，可用more nl   但试完后发现全都不行，遂放弃 最后尝试将flag.txt直接加入到url中，发现flag就出现了   二、[Week3] 《关于我穿越到CTF的异世界这档事:Q》题目中提示，单纯的玩游戏  下载好之后，一路通关游戏，得到了多个flag碎片 将所有碎片结合在一起，得到一串字符，发现格式不太一样，然后用Base64解码之后即可得到flag   三、[Week1] Gitttttttt（11.28）首先，题目中提示Gitttttttt，有可能会有.git泄漏造成的源码泄漏（部署时未删除.git目录)  可以采用工具...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cyan.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">cyanrain</div><div class="author-info-description">步履不停，成长不息</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/cyanrainddd"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/cyanrainddd" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:number1@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/images/4.jpg" target="_blank" title="QQ"><i class="fab fa-qq" style="color: #12B7F5;"></i></a><a class="social-icon" href="/images/3.png" target="_blank" title="微信"><i class="fab fa-weixin" style="color: #07C160;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E8%B5%9B"><span class="toc-number">1.</span> <span class="toc-text">初赛</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81Web"><span class="toc-number">1.1.</span> <span class="toc-text">一、Web</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81meow"><span class="toc-number">1.1.1.</span> <span class="toc-text">1、meow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81Campus-Forum-System"><span class="toc-number">1.1.2.</span> <span class="toc-text">2、Campus_Forum_System</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81AI"><span class="toc-number">1.2.</span> <span class="toc-text">二、AI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%B0%B4%E5%8D%B0%E4%BE%A6%E6%8E%A2"><span class="toc-number">1.2.1.</span> <span class="toc-text">1、水印侦探</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%B3%E8%B5%9B"><span class="toc-number">2.</span> <span class="toc-text">决赛</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81AI"><span class="toc-number">2.1.</span> <span class="toc-text">一、AI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81TransferStrike"><span class="toc-number">2.1.1.</span> <span class="toc-text">1、TransferStrike</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NSSCTF-bl4ckb0x-c0nstruct-pgd"><span class="toc-number">2.2.</span> <span class="toc-text">NSSCTF{bl4ckb0x_c0nstruct_pgd}</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81LeakAudit-1-0"><span class="toc-number">2.3.</span> <span class="toc-text">2、LeakAudit-1.0</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/11/19/KPCTF/" title="KPCTF"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/c8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="KPCTF"/></a><div class="content"><a class="title" href="/2026/11/19/KPCTF/" title="KPCTF">KPCTF</a><time datetime="2026-11-19T02:54:18.000Z" title="Created 2026-11-19 10:54:18">2026-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/11/16/ISCTF2026/" title="ISCTF2026"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/c7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ISCTF2026"/></a><div class="content"><a class="title" href="/2026/11/16/ISCTF2026/" title="ISCTF2026">ISCTF2026</a><time datetime="2026-11-16T11:37:46.000Z" title="Created 2026-11-16 19:37:46">2026-11-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/27/ISCTF2025/" title="ISCTF2025复现（慢慢完善中）"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/c6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ISCTF2025复现（慢慢完善中）"/></a><div class="content"><a class="title" href="/2026/01/27/ISCTF2025/" title="ISCTF2025复现（慢慢完善中）">ISCTF2025复现（慢慢完善中）</a><time datetime="2026-01-27T11:08:33.000Z" title="Created 2026-01-27 19:08:33">2026-01-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/15/web%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" title="Web基础学习"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/c5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web基础学习"/></a><div class="content"><a class="title" href="/2025/11/15/web%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" title="Web基础学习">Web基础学习</a><time datetime="2025-11-15T05:52:44.000Z" title="Created 2025-11-15 13:52:44">2025-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/11/%E5%85%B3%E4%BA%8E-CTF/" title="关于?CTF"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/c4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于?CTF"/></a><div class="content"><a class="title" href="/2025/11/11/%E5%85%B3%E4%BA%8E-CTF/" title="关于?CTF">关于?CTF</a><time datetime="2025-11-11T15:54:44.000Z" title="Created 2025-11-11 23:54:44">2025-11-11</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By cyanrain</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.0.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional and Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.1"></script><script src="/js/main.js?v=5.5.1"></script><script src="/js/tw_cn.js?v=5.5.1"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const applyThemeDefaultsConfig = theme => {
+    if (theme === 'dark-mode') {
+      Chart.defaults.color = "rgba(255, 255, 255, 0.8)"
+      Chart.defaults.borderColor = "rgba(255, 255, 255, 0.2)"
+      Chart.defaults.scale.ticks.backdropColor = "transparent"
+    } else {
+      Chart.defaults.color = "rgba(0, 0, 0, 0.8)"
+      Chart.defaults.borderColor = "rgba(0, 0, 0, 0.1)"
+      Chart.defaults.scale.ticks.backdropColor = "transparent"
+    }
+  }
+
+  // Recursively traverse the config object and automatically apply theme-specific color schemes
+  const applyThemeConfig = (obj, theme) => {
+    if (typeof obj !== 'object' || obj === null) return
+
+    Object.keys(obj).forEach(key => {
+      const value = obj[key]
+      // If the property is an object and has theme-specific options, apply them
+      if (typeof value === 'object' && value !== null) {
+        if (value[theme]) {
+          obj[key] = value[theme] // Apply the value for the current theme
+        } else {
+          // Recursively process child objects
+          applyThemeConfig(value, theme)
+        }
+      }
+    })
+  }
+
+  const runChartJS = ele => {
+    window.loadChartJS = true
+
+    Array.from(ele).forEach((item, index) => {
+      const chartSrc = item.firstElementChild
+      const chartID = item.getAttribute('data-chartjs-id') || ('chartjs-' + index) // Use custom ID or default ID
+      const width = item.getAttribute('data-width')
+      const existingCanvas = document.getElementById(chartID)
+
+      // If a canvas already exists, remove it to avoid rendering duplicates
+      if (existingCanvas) {
+          existingCanvas.parentNode.remove()
+      }
+
+      const chartDefinition = chartSrc.textContent
+      const canvas = document.createElement('canvas')
+      canvas.id = chartID
+
+      const div = document.createElement('div')
+      div.className = 'chartjs-wrap'
+
+      if (width) {
+        div.style.width = width
+      }
+
+      div.appendChild(canvas)
+      chartSrc.insertAdjacentElement('afterend', div)
+
+      const ctx = document.getElementById(chartID).getContext('2d')
+
+      const config = JSON.parse(chartDefinition)
+
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark-mode' : 'light-mode'
+
+      // Set default styles (initial setup)
+      applyThemeDefaultsConfig(theme)
+
+      // Automatically traverse the config and apply dual-mode color schemes
+      applyThemeConfig(config, theme)
+
+      new Chart(ctx, config)
+    })
+  }
+
+  const loadChartJS = () => {
+    const chartJSEle = document.querySelectorAll('#article-container .chartjs-container')
+    if (chartJSEle.length === 0) return
+
+    window.loadChartJS ? runChartJS(chartJSEle) : btf.getScript('https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js').then(() => runChartJS(chartJSEle))
+  }
+
+  // Listen for theme change events
+  btf.addGlobalFn('themeChange', loadChartJS, 'chartjs')
+  btf.addGlobalFn('encrypt', loadChartJS, 'chartjs')
+
+  window.pjax ? loadChartJS() : document.addEventListener('DOMContentLoaded', loadChartJS)
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-ribbon.min.js" size="111" alpha="0.3" zIndex="1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-heart.min.js" async="async" mobile="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-show-text.min.js" data-mobile="true" data-text="WISH,YOU,LUCKY" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
