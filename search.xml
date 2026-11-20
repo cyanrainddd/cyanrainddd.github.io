@@ -166,17 +166,6 @@
     
     
     <entry>
-      <title>友链</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[<ul><li>好友[ysong]:<a href="https://ysongwww.github.io/">https://ysongwww.github.io/</a></li><li>好友[wenwen]:<a href="https://liuwen35.github.io/">https://liuwen35.github.io/</a></li><li>好友[ruoxi]:<a href="https://calla-1020.github.io/">https://calla-1020.github.io/</a></li><li>好友[nn]:<a href="https://ll-4453.github.io/">https://LL-4453.github.io/</a></li><li>好友[yuting]:<a href="https://spring-912.github.io/Passion-life/">https://spring-912.github.io/Passion-life/</a></li></ul>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>关于</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
@@ -188,9 +177,20 @@
     
     
     <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>友链</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[<ul><li>好友[ysong]:<a href="https://ysongwww.github.io/">https://ysongwww.github.io/</a></li><li>好友[wenwen]:<a href="https://liuwen35.github.io/">https://liuwen35.github.io/</a></li><li>好友[ruoxi]:<a href="https://calla-1020.github.io/">https://calla-1020.github.io/</a></li><li>好友[nn]:<a href="https://ll-4453.github.io/">https://LL-4453.github.io/</a></li><li>好友[yuting]:<a href="https://spring-912.github.io/Passion-life/">https://spring-912.github.io/Passion-life/</a></li></ul>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电影</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -210,9 +210,9 @@
     
     
     <entry>
-      <title>电影</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
